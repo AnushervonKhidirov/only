@@ -1,0 +1,11 @@
+@use '/src/scss/variables';
+
+.roulette {
+    position: absolute;
+    top: calc(50% - 40rem / 2);
+    left: calc(50% - 40rem / 2);
+    width: 40rem;
+    height: 40rem;
+    border: variables.$lineWide solid variables.$lineColorLight;
+    border-radius: 100%;
+}

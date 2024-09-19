@@ -1,0 +1,33 @@
+@use '/src/scss/variables';
+
+.rouletteItem {
+    position: absolute;
+    top: calc(-4rem / 2);
+    left: calc(50% - 4rem / 2);
+    width: 4rem;
+    height: 4rem;
+    transform-origin: 2rem calc(20rem + 2rem);
+}
+
+.rouletteCircle {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 1.5rem;
+    border: 1px solid variables.$lineColorDark;
+    border-radius: 100%;
+}
+
+.rouletteTitle {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+    display: grid;
+    height: 100%;
+    align-items: center;
+    transform: rotate(0deg);
+    transform-origin: calc(-5rem + 2rem);
+}

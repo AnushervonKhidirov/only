@@ -1,9 +1,13 @@
+import Roulette from '../component/roulette/roulette'
+
 import styles from './app.module.scss'
 
 const App = () => {
-    console.log(styles);
-    
-    return <div className={styles.hello}>hello!!</div>
+    return (
+        <div className={styles.app}>
+            <Roulette />
+        </div>
+    )
 }
 
 export default App

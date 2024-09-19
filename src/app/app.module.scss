@@ -1,5 +1,34 @@
-$main: red;
+@use '/src/scss//variables';
 
-.hello {
-    color: $main;
+.app {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+@media screen and (min-width: 1024px) {
+    .app {
+        max-width: 1024px;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .app {
+        background-image: linear-gradient(
+                90deg,
+                transparent calc(50% - variables.$lineWide / 2),
+                variables.$lineColorLight calc(50% - variables.$lineWide),
+                variables.$lineColorLight calc(50% + variables.$lineWide / 2),
+                transparent calc(50% + variables.$lineWide / 2)
+            ),
+            linear-gradient(
+                transparent calc(50% - variables.$lineWide / 2),
+                variables.$lineColorLight calc(50% - variables.$lineWide),
+                variables.$lineColorLight calc(50% + variables.$lineWide / 2),
+                transparent calc(50% + variables.$lineWide / 2)
+            );
+        border: variables.$lineWide solid variables.$lineColorLight;
+    }
 }
