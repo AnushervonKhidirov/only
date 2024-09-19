@@ -9,10 +9,26 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ['babel-loader'],
             },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                namedExport: false,
+                            },
+                        },
+                    },
+                    'sass-loader',
+                ],
+            },
         ],
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.css', '.scss'],
     },
     output: {
         path: path.resolve(__dirname, './dist'),

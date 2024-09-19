@@ -1,5 +1,9 @@
+import styles from './app.module.scss'
+
 const App = () => {
-    return <div>hello!!</div>
+    console.log(styles);
+    
+    return <div className={styles.hello}>hello!!</div>
 }
 
 export default App
