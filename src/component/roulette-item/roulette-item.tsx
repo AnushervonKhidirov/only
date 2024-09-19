@@ -30,12 +30,15 @@ const RouletteItem: FC<TRouletteItem> = ({ totalIndex, index, title }) => {
     }, [itemDeg, degree])
 
     useEffect(() => {
+        updateDegree(degreeBetweenItems * activeItem)
+    }, [activeItem])
+
+    useEffect(() => {
         setItemDeg(degreeBetweenItems * index)
-    }, [rouletteItemRef, degree])
+    }, [degree])
 
     function rouletteHandler() {
         updateActiveItem(index)
-        updateDegree(degreeBetweenItems * activeItem)
     }
 
     return (
