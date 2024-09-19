@@ -9,7 +9,7 @@
     height: size.$rouletteItemSize;
     cursor: pointer;
     transform-origin: calc(size.$rouletteItemSize / 2) calc(size.$rouletteSize / 2 + size.$rouletteItemSize / 2);
-    transition: all 0.5s;
+    transition: transform 0.5s;
 }
 
 .rouletteCircle {
@@ -22,7 +22,7 @@
     font-size: 1.5rem;
     border: 1px solid color.$lineColorDark;
     border-radius: 100%;
-    transition: all 0.5s;
+    transition: transform 0.5s;
 }
 
 .rouletteTitle {
@@ -34,5 +34,5 @@
     align-items: center;
     pointer-events: none;
     transform-origin: calc(-5rem + size.$rouletteItemSize / 2);
-    transition: all 0.5s;
+    transition: transform 0.5s;
 }
