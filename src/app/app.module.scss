@@ -1,4 +1,5 @@
-@use '/src/scss//variables';
+@use '/src/scss/abstracts/color';
+@use '/src/scss/abstracts/size';
 
 .app {
     position: absolute;
@@ -10,7 +11,9 @@
 
 @media screen and (min-width: 1024px) {
     .app {
-        max-width: 1024px;
+        min-width: 1024px;
+        max-width: 1500px;
+        width: 90vw;
     }
 }
 
@@ -18,17 +21,17 @@
     .app {
         background-image: linear-gradient(
                 90deg,
-                transparent calc(50% - variables.$lineWide / 2),
-                variables.$lineColorLight calc(50% - variables.$lineWide),
-                variables.$lineColorLight calc(50% + variables.$lineWide / 2),
-                transparent calc(50% + variables.$lineWide / 2)
+                transparent calc(50% - size.$lineWide / 2),
+                color.$lineColorLight calc(50% - size.$lineWide),
+                color.$lineColorLight calc(50% + size.$lineWide / 2),
+                transparent calc(50% + size.$lineWide / 2)
             ),
             linear-gradient(
-                transparent calc(50% - variables.$lineWide / 2),
-                variables.$lineColorLight calc(50% - variables.$lineWide),
-                variables.$lineColorLight calc(50% + variables.$lineWide / 2),
-                transparent calc(50% + variables.$lineWide / 2)
+                transparent calc(50% - size.$lineWide / 2),
+                color.$lineColorLight calc(50% - size.$lineWide),
+                color.$lineColorLight calc(50% + size.$lineWide / 2),
+                transparent calc(50% + size.$lineWide / 2)
             );
-        border: variables.$lineWide solid variables.$lineColorLight;
+        border: size.$lineWide solid color.$lineColorLight;
     }
 }
