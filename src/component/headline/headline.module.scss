@@ -1,0 +1,10 @@
+@use '/src/scss/abstracts/color';
+
+.headline {
+    position: absolute;
+    top: 10rem;
+    font-size: 5rem;
+    border-image: linear-gradient(color.$purple, color.$pink) 1;
+    border-left: 0.4rem solid;
+    padding-left: 5rem;
+}

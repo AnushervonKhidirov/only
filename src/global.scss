@@ -1,13 +1,29 @@
+@use '/src/scss/abstracts/color';
+
+@font-face {
+    font-family: 'PTSans';
+    src: url('/src/assets/fonts/PTSans-Regular.woff') format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    src: url('/src/assets/fonts/PTSans-Bold.woff') format('woff');
+    font-weight: 700;
+}
+
 body {
+    font-family: 'PTSans';
     width: 100vw;
     height: 100vh;
+    color: color.$darkBlue;
     overflow: hidden;
     margin: 0;
 }
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 

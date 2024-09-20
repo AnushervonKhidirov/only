@@ -1,0 +1,37 @@
+@use '/src/scss/abstracts/color';
+@use '/src/scss/abstracts/size';
+
+.arrowWrapper {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+.arrowWrapper {
+    display: grid;
+    width: size.$rouletteArrowSize;
+    height: size.$rouletteArrowSize;
+    justify-items: center;
+    align-items: center;
+    border: size.$lineWide solid color.$darkBlue;
+    border-radius: 100%;
+    overflow: hidden;
+    cursor: pointer;
+
+    .arrow {
+        width: 40%;
+        height: 40%;
+    }
+
+    &.right .arrow {
+        border-top: 0.3rem solid color.$darkBlue;
+        border-right: 0.3rem solid color.$darkBlue;
+        transform: translateX(-20%) rotate(45deg);
+    }
+
+    &.left .arrow {
+        border-bottom: 0.3rem solid color.$darkBlue;
+        border-left: 0.3rem solid color.$darkBlue;
+        transform: translateX(20%) rotate(45deg);
+    }
+}
