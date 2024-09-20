@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import useRouletteStore from '../../store/roulette'
 
+import classNames from 'classnames'
 import styles from './roulette-item.module.scss'
 
 type TRouletteItem = {
@@ -19,18 +20,18 @@ const RouletteItem: FC<TRouletteItem> = ({ totalIndex, index, title }) => {
     const titleRef = useRef<HTMLDivElement>(null)
     const [itemDeg, setItemDeg] = useState(0)
 
-    const degreeBetweenItems = (360 / totalIndex)
+    const degreeBetweenItems = 360 / totalIndex
 
     useEffect(() => {
         if (rouletteItemRef.current && circleRef.current && titleRef.current) {
-            rouletteItemRef.current.style.transform = `rotate(${itemDeg - degree}deg)`
-            circleRef.current.style.transform = `rotate(${-itemDeg + degree}deg)`
-            titleRef.current.style.transform = `rotate(${-itemDeg + degree}deg)`
+            rouletteItemRef.current.style.rotate = `${itemDeg - degree}deg`
+            circleRef.current.style.rotate = `${-itemDeg + degree}deg`
+            titleRef.current.style.rotate = `${-itemDeg + degree}deg`
         }
     }, [itemDeg, degree])
 
     useEffect(() => {
-        updateDegree(degreeBetweenItems * activeItem)
+        updateDegree(degreeBetweenItems * activeItem - (90 - degreeBetweenItems))
     }, [activeItem])
 
     useEffect(() => {
@@ -42,9 +43,14 @@ const RouletteItem: FC<TRouletteItem> = ({ totalIndex, index, title }) => {
     }
 
     return (
-        <div ref={rouletteItemRef} className={styles.rouletteItem} onClick={rouletteHandler}>
+        <div
+            ref={rouletteItemRef}
+            className={classNames(styles.rouletteItem, { [styles.active]: index === activeItem })}
+            onClick={rouletteHandler}
+        >
             <div ref={circleRef} className={styles.rouletteCircle}>
-                {index + 1}
+                <div className={styles.border}></div>
+                <div className={styles.index}>{index + 1}</div>
             </div>
             <div ref={titleRef} className={styles.rouletteTitle}>
                 {title}

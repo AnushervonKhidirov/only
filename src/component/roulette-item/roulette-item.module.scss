@@ -9,7 +9,22 @@
     height: size.$rouletteItemSize;
     cursor: pointer;
     transform-origin: calc(size.$rouletteItemSize / 2) calc(size.$rouletteSize / 2 + size.$rouletteItemSize / 2);
-    transition: transform 0.5s;
+    transition: rotate 0.5s;
+
+    &:hover .border,
+    &.active .border {
+        background-color: #fff;
+        scale: 1;
+    }
+
+    &.active .index,
+    &:hover .index {
+        opacity: 1;
+    }
+
+    &.active .rouletteTitle {
+        opacity: 1;
+    }
 }
 
 .rouletteCircle {
@@ -18,12 +33,27 @@
     height: 100%;
     justify-items: center;
     align-items: center;
-    background-color: #fff;
     font-size: 1.5rem;
-    border: 1px solid color.$lineColorDark;
-    border-radius: 100%;
-    transition: transform 0.5s;
+    transition: rotate 0.5s;
+    
+    .border {
+        position: absolute;
+        inset: 0;
+        background-color: color.$darkBlue;
+        border: 1px solid color.$lineColorDark;
+        border-radius: 100%;
+        transition: scale 0.3s, background-color 0.3s;
+        scale: 0.2;
+    }
+    
+    .index {
+        position: relative;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 1;
+    }
 }
+
 
 .rouletteTitle {
     position: absolute;
@@ -32,7 +62,8 @@
     display: grid;
     height: 100%;
     align-items: center;
+    opacity: 0;
     pointer-events: none;
     transform-origin: calc(-5rem + size.$rouletteItemSize / 2);
-    transition: transform 0.5s;
+    transition: rotate 0.5s, opacity 0.5s;
 }
