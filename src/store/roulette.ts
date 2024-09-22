@@ -4,7 +4,7 @@ type TRoulette = {
     degree: number
     activeItem: number
     updateDegree: (deg: number) => void
-    updateActiveItem: (deg: number) => void
+    updateActiveItem: (active: number) => void
 }
 
 const useRouletteStore = create<TRoulette>(set => ({

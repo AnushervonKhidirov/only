@@ -27,10 +27,10 @@
                 transparent calc(50% + size.$lineWide / 2)
             ),
             linear-gradient(
-                transparent calc(50% - size.$lineWide / 2),
-                color.$lineColorLight calc(50% - size.$lineWide),
-                color.$lineColorLight calc(50% + size.$lineWide / 2),
-                transparent calc(50% + size.$lineWide / 2)
+                transparent calc(size.$horizontalLinePosition - size.$lineWide / 2),
+                color.$lineColorLight calc(size.$horizontalLinePosition - size.$lineWide),
+                color.$lineColorLight calc(size.$horizontalLinePosition + size.$lineWide / 2),
+                transparent calc(size.$horizontalLinePosition + size.$lineWide / 2)
             );
         border: size.$lineWide solid color.$lineColorLight;
     }

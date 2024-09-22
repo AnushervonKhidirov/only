@@ -13,12 +13,13 @@
 }
 
 body {
-    font-family: 'PTSans';
     width: 100vw;
     height: 100vh;
     color: color.$darkBlue;
+    font-family: 'PTSans';
     overflow: hidden;
     margin: 0;
+    user-select: none;
 }
 
 * {
