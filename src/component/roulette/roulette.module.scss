@@ -3,10 +3,11 @@
 
 .roulette {
     position: absolute;
-    top: calc(50% - size.$rouletteSize / 2);
+    top: calc(size.$horizontalLinePosition - size.$rouletteSize / 2);
     left: calc(50% - size.$rouletteSize / 2);
     width: size.$rouletteSize;
     height: size.$rouletteSize;
     border: size.$lineWide solid color.$lineColorLight;
     border-radius: 100%;
+    z-index: 9;
 }

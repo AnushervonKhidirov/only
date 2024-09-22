@@ -9,7 +9,7 @@
     height: size.$rouletteItemSize;
     cursor: pointer;
     transform-origin: calc(size.$rouletteItemSize / 2) calc(size.$rouletteSize / 2 + size.$rouletteItemSize / 2);
-    transition: rotate 0.5s;
+    transition: rotate 1s;
 
     &:hover .border,
     &.active .border {
@@ -34,7 +34,7 @@
     justify-items: center;
     align-items: center;
     font-size: 1.5rem;
-    transition: rotate 0.5s;
+    transition: rotate 1s;
     
     .border {
         position: absolute;
@@ -65,5 +65,5 @@
     opacity: 0;
     pointer-events: none;
     transform-origin: calc(-5rem + size.$rouletteItemSize / 2);
-    transition: rotate 0.5s, opacity 0.5s;
+    transition: rotate 1s, opacity 1s;
 }
