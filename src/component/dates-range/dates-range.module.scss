@@ -1,0 +1,13 @@
+@use '/src/scss/abstracts/color';
+
+.dateRange {
+    font-size: 10rem;
+}
+
+.from {
+    color: color.$purple;
+}
+
+.to {
+    color: color.$pink;
+}

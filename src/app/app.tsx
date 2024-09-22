@@ -12,7 +12,7 @@ const App = () => {
                 Исторические
                 <br /> даты
             </Headline>
-            {/* <DateRange from={2000} to={2005} /> */}
+            <DateRange from={2000} to={2005} />
             <Roulette />
             <ChapterSlider />
         </div>
