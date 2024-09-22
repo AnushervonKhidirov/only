@@ -1,0 +1,13 @@
+@use '/src/scss/abstracts/color';
+
+.dateSlide {
+    font-size: 1.5rem;
+    display: grid;
+    gap: 0.75em;
+}
+
+.date {
+    color: color.$purple;
+    font-size: 1.25em;
+    font-weight: 700;
+}
