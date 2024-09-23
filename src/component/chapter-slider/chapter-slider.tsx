@@ -50,6 +50,8 @@ const ChapterSlider: FC = () => {
             className={styles.slider}
             modules={[EffectFade]}
             slidesPerView={1}
+            noSwiping
+            allowTouchMove={false}
             onInit={swiper => (swiperRef.current = swiper)}
             onSlideChange={swiper => updateActiveItem(swiper.activeIndex)}
             effect="fade"
