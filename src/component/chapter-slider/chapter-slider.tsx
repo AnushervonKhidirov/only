@@ -29,7 +29,7 @@ const ChapterSlider: FC = () => {
 
     const increaseDatesAnimation = useCallback(() => {
         const activeChapter = datesPerChapters[chapters[activeItem]]
-        const activeChapterDates = activeChapter.map(chapter => chapter.date)
+        const activeChapterDates = activeChapter.map(chapter => chapter.date).sort((a, b) => a - b)
 
         const prevDates = {
             from: from,
