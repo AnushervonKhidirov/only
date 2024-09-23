@@ -1,13 +1,10 @@
-import type { FC } from 'react'
+import useDatesRangeStore from '../../store/range-date'
 
 import styles from './dates-range.module.scss'
 
-type TDateRange = {
-    from: number
-    to: number
-}
+const DateRange = () => {
+    const { from, to } = useDatesRangeStore(state => state)
 
-const DateRange: FC<TDateRange> = ({ from, to }) => {
     return (
         <div className={styles.dateRange}>
             <div className={styles.from}>{from}</div>

@@ -1,7 +1,16 @@
 @use '/src/scss/abstracts/color';
+@use '/src/scss/abstracts/size';
 
 .dateRange {
-    font-size: 10rem;
+    position: absolute;
+    top: size.$horizontalLinePosition;
+    display: grid;
+    width: 100%;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 0.5em;
+    font-size: 15rem;
+    transform: translateY(-50%);
 }
 
 .from {
