@@ -83,8 +83,8 @@ const ChapterSliderNavigation = () => {
 
     return (
         <div className={styles.navigation}>
-            <Arrow className={classNames(styles.arrow)} callback={prev} side="left" />
-            <Arrow className={classNames(styles.arrow)} callback={next} side="right" />
+            <Arrow className={classNames(styles.arrow, {[styles.disabled]: swiper.isBeginning})} callback={prev} side="left" />
+            <Arrow className={classNames(styles.arrow, {[styles.disabled]: swiper.isEnd})} callback={next} side="right" />
         </div>
     )
 }

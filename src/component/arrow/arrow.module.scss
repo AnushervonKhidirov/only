@@ -3,43 +3,41 @@
 
 .arrowWrapper {
     display: grid;
-    width: size.$rouletteArrowSize;
-    height: size.$rouletteArrowSize;
     justify-items: center;
     align-items: center;
     border: size.$lineWide solid color.$lineColorDark;
     border-radius: 100%;
     overflow: hidden;
-    width: 2.5em;
-    height: 2.5em;
+    width: 3em;
+    height: 3em;
     cursor: pointer;
 
     .arrow {
-        width: 30%;
-        height: 30%;
+        width: 25%;
+        height: 25%;
     }
 
     &.right .arrow {
-        border-top: 0.2em solid color.$darkBlue;
-        border-right: 0.2em solid color.$darkBlue;
+        border-top: 0.15em solid color.$darkBlue;
+        border-right: 0.15em solid color.$darkBlue;
         transform: translateX(-20%) rotate(45deg);
     }
 
     &.left .arrow {
-        border-bottom: 0.2em solid color.$darkBlue;
-        border-left: 0.2em solid color.$darkBlue;
+        border-bottom: 0.15em solid color.$darkBlue;
+        border-left: 0.15em solid color.$darkBlue;
         transform: translateX(20%) rotate(45deg);
     }
 
     &.right.light .arrow {
-        border-top: 0.2em solid color.$purple;
-        border-right: 0.2em solid color.$purple;
+        border-top: 0.15em solid color.$purple;
+        border-right: 0.15em solid color.$purple;
         transform: translateX(-20%) rotate(45deg);
     }
 
     &.left.light .arrow {
-        border-bottom: 0.2em solid color.$purple;
-        border-left: 0.2em solid color.$purple;
+        border-bottom: 0.15em solid color.$purple;
+        border-left: 0.15em solid color.$purple;
         transform: translateX(20%) rotate(45deg);
     }
 }
