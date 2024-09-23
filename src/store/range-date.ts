@@ -10,8 +10,8 @@ type TDatesRangeStore = TDatesRange & {
 }
 
 const useDatesRangeStore = create<TDatesRangeStore>(set => ({
-    from: 1950,
-    to: 1955,
+    from: 1900,
+    to: 1900,
     updateDates: date =>
         set(() => ({
             from: date.from,

@@ -60,8 +60,8 @@ const ChapterSlider: FC = () => {
                 to: newToRange,
             }
 
-            updateDates(result)
             setTimeout(() => {
+                updateDates(result)
                 animation(result)
             }, interval)
         }
