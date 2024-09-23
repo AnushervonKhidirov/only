@@ -4,16 +4,9 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-type Mode = 'production' | 'development'
-
-type EnvVariable = {
-    mode: Mode
-    port: number
-}
-
-export default (env: EnvVariable) => {
+export default () => {
     const config: webpack.Configuration = {
-        mode: env.mode ?? 'development',
+        mode: 'development',
         entry: path.resolve(__dirname, './src/index.tsx'),
         module: {
             rules: [
