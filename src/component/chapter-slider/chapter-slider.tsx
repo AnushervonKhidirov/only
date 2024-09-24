@@ -69,7 +69,7 @@ const ChapterSlider: FC = () => {
             effect="fade"
             pagination={{ enabled: isMobile, type: 'bullets', clickable: true, bulletActiveClass: styles.bulletActive }}
         >
-            <SubHeadline>{chapters[activeItem]}</SubHeadline>
+            {isMobile && <SubHeadline>{chapters[activeItem]}</SubHeadline>}
             {chapters.map((chapter, index) => (
                 <SwiperSlide key={`${chapter}-${index}`}>
                     <DateSlider chapter={chapter} />
