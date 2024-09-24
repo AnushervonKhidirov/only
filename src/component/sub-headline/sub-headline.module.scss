@@ -1,0 +1,19 @@
+@use '/src/scss/abstracts/size';
+@use '/src/scss/abstracts/color';
+
+.subHeadline {
+    position: relative;
+    width: 100vw;
+    grid-area: sub-headline;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 0 size.$paddingInline 1em;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: auto size.$paddingInline 0;
+        height: 2px;
+        background-color: color.$lineColorDark;
+    }
+}

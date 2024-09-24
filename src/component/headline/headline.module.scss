@@ -1,11 +1,19 @@
 @use '/src/scss/abstracts/color';
+@use '/src/scss/abstracts/size';
 
 .headline {
-    position: absolute;
-    top: 10rem;
+    width: min-content;
+    grid-area: headline;
     font-size: 5rem;
     font-weight: 700;
-    border-image: linear-gradient(color.$purple, color.$pink) 1;
-    border-left: 0.4rem solid;
-    padding-left: 5rem;
+    padding: 0 size.$paddingInline;
+}
+
+@media screen and (min-width: 426px) {
+    .headline {
+        position: absolute;
+        top: 10rem;
+        border-image: linear-gradient(color.$purple, color.$pink) 1;
+        border-left: 0.4rem solid;
+    }
 }

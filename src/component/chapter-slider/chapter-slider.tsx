@@ -1,26 +1,38 @@
 import type { FC } from 'react'
 import type { Swiper as TSwiper } from 'swiper'
 
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
-import { EffectFade } from 'swiper/modules'
+import { EffectFade, Pagination } from 'swiper/modules'
 import DateSlider from '../date-slider/date-slider'
 import Arrow from '../arrow/arrow'
+import SubHeadline from '../sub-headline/sub-headline'
 
 import useRouletteStore from '../../store/roulette'
 
 import classNames from 'classnames'
 import { chapters } from './constant'
 import { addZero } from '../../helper/add-zero'
+import { checkIsMobile } from '../../helper/is-mobile'
 
 import 'swiper/css'
 import 'swiper/css/effect-fade'
+import 'swiper/css/pagination'
 import styles from './chapter-slider.module.scss'
 
 
 const ChapterSlider: FC = () => {
     const { activeItem, updateActiveItem } = useRouletteStore(state => state)
     const swiperRef = useRef<TSwiper>(null)
+    const [isMobile, setIsMobile] = useState(false)
+
+    useLayoutEffect(() => {
+        setIsMobile(checkIsMobile())
+
+        window.addEventListener('resize', () => {
+            setIsMobile(checkIsMobile())
+        })
+    })
 
     const updateAnimation = useCallback(() => {
         if (swiperRef.current) {
@@ -48,14 +60,16 @@ const ChapterSlider: FC = () => {
     return (
         <Swiper
             className={styles.slider}
-            modules={[EffectFade]}
+            modules={[EffectFade, Pagination]}
             slidesPerView={1}
             noSwiping
             allowTouchMove={false}
             onInit={swiper => (swiperRef.current = swiper)}
             onSlideChange={swiper => updateActiveItem(swiper.activeIndex)}
             effect="fade"
+            pagination={{ enabled: isMobile, type: 'bullets', clickable: true, bulletActiveClass: styles.bulletActive }}
         >
+            <SubHeadline>{chapters[activeItem]}</SubHeadline>
             {chapters.map((chapter, index) => (
                 <SwiperSlide key={`${chapter}-${index}`}>
                     <DateSlider chapter={chapter} />
@@ -96,7 +110,7 @@ const ChapterSliderPagination = () => {
         return `${addZero(swiper.activeIndex + 1)}/${addZero(swiper.slides.length)}`
     }
 
-    return <div className={classNames(styles.pagination, 'chapter-pagination')}>{customPagination()}</div>
+    return <div className={styles.pagination}>{customPagination()}</div>
 }
 
 export default ChapterSlider

@@ -2,16 +2,14 @@
 @use '/src/scss/abstracts/size';
 
 .dateRange {
-    position: absolute;
-    top: size.$horizontalLinePosition;
     display: grid;
     width: 100%;
     grid-auto-flow: column;
-    justify-content: center;
-    gap: 0.4em;
-    font-size: 17rem;
-    transform: translateY(-50%);
+    grid-area: dates;
+    justify-content: space-between;
+    font-size: 11rem;
     font-weight: 700;
+    padding: 0 size.$paddingInline;
 }
 
 .from {
@@ -20,4 +18,21 @@
 
 .to {
     color: color.$pink;
+}
+
+@media screen and (min-width: 426px) {
+    .dateRange {
+        position: absolute;
+        top: size.$horizontalLinePosition;
+        justify-content: center;
+        gap: 0.4em;
+        font-size: 17rem;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .dateRange {
+        align-self: center;
+    }
 }

@@ -11,3 +11,9 @@
     font-size: 1.25em;
     font-weight: 700;
 }
+
+@media screen and (max-width: 425px) {
+    .dateSlide {
+        font-size: 2.5rem;
+    }
+}

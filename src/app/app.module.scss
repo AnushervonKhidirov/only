@@ -17,7 +17,7 @@
     }
 }
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 426px) {
     .app {
         background-image: linear-gradient(
                 90deg,
@@ -33,5 +33,14 @@
                 transparent calc(size.$horizontalLinePosition + size.$lineWide / 2)
             );
         border: size.$lineWide solid color.$lineColorLight;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .app {
+        display: grid;
+        grid-template-areas: 'headline' 'dates' 'slider';
+        grid-template-rows: max-content 1fr 50vh;
+        padding-block: 5rem;
     }
 }

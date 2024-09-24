@@ -39,3 +39,9 @@ body {
         font-size: 1vw;
     }
 }
+
+@media screen and (max-width: 425px) {
+    html {
+        font-size: 1.5vw;
+    }
+}
